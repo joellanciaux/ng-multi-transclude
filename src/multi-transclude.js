@@ -107,8 +107,10 @@
           throw new Error('Illegal use of ngMultiTransclude. No wrapping controller.')
         }
 
+        var transcludeTarget = attrs.ngMultiTransclude || attrs.name;
+
         // Receive transcluded content.
-        ctrl.transclude(attrs.ngMultiTransclude, element);
+        ctrl.transclude(transcludeTarget, element);
       }
     };
   });
